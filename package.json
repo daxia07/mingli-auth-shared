@@ -1,53 +1,62 @@
 {
   "name": "@mingli/auth",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shared auth for *.mingli.world — cookie-based SSO",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./edge": {
-      "types": "./src/edge.ts",
-      "import": "./src/edge.ts",
-      "default": "./src/edge.ts"
+      "types": "./dist/edge.d.ts",
+      "import": "./dist/edge.js",
+      "default": "./dist/edge.js"
     },
     "./middleware": {
-      "types": "./src/middleware.ts",
-      "import": "./src/middleware.ts",
-      "default": "./src/middleware.ts"
+      "types": "./dist/middleware.d.ts",
+      "import": "./dist/middleware.js",
+      "default": "./dist/middleware.js"
     },
     "./login-page": {
-      "types": "./src/login-page.tsx",
-      "import": "./src/login-page.tsx",
-      "default": "./src/login-page.tsx"
+      "types": "./dist/login-page.d.ts",
+      "import": "./dist/login-page.js",
+      "default": "./dist/login-page.js"
     },
     "./api/login": {
-      "types": "./src/api/login.ts",
-      "import": "./src/api/login.ts",
-      "default": "./src/api/login.ts"
+      "types": "./dist/api/login.d.ts",
+      "import": "./dist/api/login.js",
+      "default": "./dist/api/login.js"
     },
     "./api/logout": {
-      "types": "./src/api/logout.ts",
-      "import": "./src/api/logout.ts",
-      "default": "./src/api/logout.ts"
+      "types": "./dist/api/logout.d.ts",
+      "import": "./dist/api/logout.js",
+      "default": "./dist/api/logout.js"
     }
   },
   "peerDependencies": {
+    "lucide-react": ">=0.300.0",
     "next": ">=14.0.0",
-    "react": ">=18.0.0",
-    "lucide-react": ">=0.300.0"
+    "react": ">=18.0.0"
   },
   "files": [
-    "src"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
   "license": "UNLICENSED",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daxia07/mingli-auth-shared.git"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "typescript": "^7.0.2"
   }
 }
