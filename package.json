@@ -1,0 +1,51 @@
+{
+  "name": "@mingli/auth",
+  "version": "1.0.0",
+  "description": "Shared auth for *.mingli.world — cookie-based SSO",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./edge": {
+      "import": "./dist/edge.js",
+      "types": "./dist/edge.d.ts"
+    },
+    "./middleware": {
+      "import": "./dist/middleware.js",
+      "types": "./dist/middleware.d.ts"
+    },
+    "./login-page": {
+      "import": "./dist/login-page.js",
+      "types": "./dist/login-page.d.ts"
+    },
+    "./api/login": {
+      "import": "./dist/api/login.js",
+      "types": "./dist/api/login.d.ts"
+    },
+    "./api/logout": {
+      "import": "./dist/api/logout.js",
+      "types": "./dist/api/logout.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "next": ">=14.0.0",
+    "react": ">=18.0.0",
+    "lucide-react": ">=0.300.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daxia07/mingli-auth-shared.git"
+  }
+}
